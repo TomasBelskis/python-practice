@@ -1,3 +1,5 @@
+#chapter 3 example
+
 import turtle #imports pythons turtle module
 
 window = turtle.Screen() #creates playground(scene/window/canvas) for turtles

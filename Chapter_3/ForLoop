@@ -1,0 +1,4 @@
+for f in ["Joe", "Chandler", "Jessica", "Carl"]:
+    invite = "Hi " + f + ". Please come to my party on saturday!"
+    print(invite)
+    # More code can follow here ...

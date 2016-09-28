@@ -1,3 +1,5 @@
+#chapter 3 example
+
 import turtle
 
 wn=turtle.Screen()
