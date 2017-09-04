@@ -5,7 +5,7 @@
 @Description: Extend the above program so that the sides can be
               given to the function in any order.
 """
-
+# TODO rewrite the if statements, determine max value using max function
 def is_rightangled(s1,s2,s3):
     sqr_s1 = s1 ** 2
     sqr_s2 = s2 ** 2
