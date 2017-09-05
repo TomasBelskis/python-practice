@@ -89,3 +89,48 @@ def distance(x1, y1, x2, y2):
     return math.sqrt( (x2 - x1)**2 + (y2 - y1)**2 )
 
 print("Distance result using math module: ", distance(1,2,4,6))
+
+# Notes debugging with print
+"""
+1. Use print functions in order to test outputs and your code 
+2. Do not write chatterbox functions, a chatterbox is a fruitful function that, in addition
+to it's primary task, also asks the user for input, or prints output, when it would be more 
+useful if it simply shut up and did it's work quietly.
+3. example: functions like range, max, and abs, wouldn't be useful building blocks for other programs 
+if they prompted the user for input or printed results while performing tasks
+4. Avoid calling print and input functions inside fruitful functions "unless the primary purpose
+of your function is to perform input and output"
+5. Use print functions for testing, remove them afterwards.
+"""
+
+# Notes : Composition
+"""
+ - Composition is when you call a function within a function.
+ - Example: write a function that takes two points, the center of the circle
+ and a point on the perimeter, and computes the area of the circle.
+"""
+
+# Example function: Calculating the area of a circle
+"""
+1. Assume center point is stored in the variables xc and yc, and the permiter point is in
+xp and yp.
+2. First step is to find the radius of the circle, which is the distance between the
+two points. 
+3. Formula previously written within a  function distance does that 
+radius = distance(xc, yc, xp, yp)
+4. Second step is to find the area of a circle with that radius and return it. Again 
+use the previously written function area
+result = area(radius)
+return result
+5. Wrap it all in a single function.
+"""
+
+def area2(xc, yc, xp, yp): # Final function
+    radius = distance(xc,yc,xp,yp)
+    result = area_2(radius)
+    return  result
+
+# Once the function has been tested and working it can be rewritten to a more concise function
+def area2_v2(xc, yc, xp, yp):
+    return area(distance(xc, yc, xp, yp))
+
