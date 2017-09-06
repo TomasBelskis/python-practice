@@ -134,3 +134,19 @@ def area2(xc, yc, xp, yp): # Final function
 def area2_v2(xc, yc, xp, yp):
     return area(distance(xc, yc, xp, yp))
 
+# Boolean Functions
+"""
+ - Functions can return Boolean value, which is often convenient for hiding complicated test inside functions. 
+ Example:
+"""
+def is_divisible(x, y):
+    """ Test if x is exactly divisble by y """
+    if x % y == 0:
+        return True
+    else:
+        return False
+
+# Can make the above function more concise by doing the following
+def is_divisible_2(x ,y):
+    return x % y == 0
+
