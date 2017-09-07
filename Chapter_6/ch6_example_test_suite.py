@@ -46,4 +46,6 @@ def test_suite():
 test_suite() # Here is the call to run the tests
 # Tree test fail for the buggy version
 # TODO Read up on assertion and how to use instead of writing own test function
+# https://docs.python.org/3/library/unittest.html
+
 
