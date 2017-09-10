@@ -16,6 +16,8 @@ Condition: All of the exercises below should be added to a single file. In
 @Description: Exercises 1-19 for chapter 6
 """
 
+# TODO write comments for each function
+
 import unittest
 
 def turn_clockwise(direction):
@@ -40,6 +42,10 @@ def day_name(num):
         if i == num:
             return days[i]
 
+    return "None"
+
+# TODO Finish of exercise 3 function
+def day_num(day):
     return "None"
 
 class test(unittest.TestCase):
