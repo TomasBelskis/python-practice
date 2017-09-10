@@ -34,6 +34,12 @@ def turn_clockwise(direction):
     return "None"
 
 def day_name(num):
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    for i in range(len(days)):
+        if i == num:
+            return days[i]
+
     return "None"
 
 class test(unittest.TestCase):
