@@ -80,6 +80,26 @@ class test(unittest.TestCase):
 
     def test_3_day(self):
         self.assertEqual(day_name(42), "None")
+    """Exercise 2 END"""
+
+    """
+        Exercise 3: Write the inverse function day_num which is given a day 
+        name, and returns its number:
+    """
+    def test_1_dayInverse(self):
+        self.assertEqual(day_num("Friday"), 5)
+
+    def test_2_dayInverse(self):
+        self.assertEqual(day_num("Sunday"), 0)
+
+    def test_3_dayInverse(self):
+        self.assertEqual(day_name(3), 3)
+
+    def test_4_dayInverse(self):
+        self.assertEqual(day_num("Thursday"), "Thursday")
+
+    def test_5_dayInverse(self):
+        self.assertEqual(day_num("Halloween"), "None")
 
     def tearDown(self):
         pass
