@@ -26,7 +26,7 @@ class WidgetTestCase(unittest.TestCase):
 
 class WidgetTestCase_2(unittest.TestCase):
     def setUp(self):
-        self.widget = Widget('The Widget')
+        self.widget = widget('The Widget')
 
     def tearDown(self):
         self.widget.dispose()
