@@ -20,4 +20,4 @@ class MyTestCase(unittest.TestCase):
         # windows specific testing code
         pass
 
-# TODO fix the code for this test case. Finish unit testing chapter
+# TODO fix the code for this test case.

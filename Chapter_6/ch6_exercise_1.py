@@ -53,6 +53,21 @@ def day_num(day):
 
 # TODO Finish of exercise 4 function
 def day_add(day, num):
+    s = 0
+    leave_day = 0
+    days = ["Monday","Tuesday","Wendnesday","Thursday","Friday","Saturday","Sunday"]
+    for i in range(len(days)):
+        if days[i] == day:
+            s = i
+
+    leave_day = s + (num % 7)
+
+    if(leave_day < 7 ):
+        return days[leave_day]
+    else:
+        leave_day = leave_day % 7
+        return days[leave_day]
+
     return "None"
 
 class test(unittest.TestCase):
@@ -106,10 +121,10 @@ class test(unittest.TestCase):
         self.assertEqual(day_num("Sunday"), 0)
 
     def test_3_dayInverse(self):
-        self.assertEqual(day_name(3), 3)
+        self.assertEqual(day_num(day_name(3)), 3)
 
     def test_4_dayInverse(self):
-        self.assertEqual(day_num("Thursday"), "Thursday")
+        self.assertEqual(day_name(day_num("Thursday")), "Thursday")
 
     def test_5_dayInverse(self):
         self.assertEqual(day_num("Halloween"), "None")
