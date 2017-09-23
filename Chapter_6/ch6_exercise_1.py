@@ -147,6 +147,27 @@ class test(unittest.TestCase):
 
     def test_4_dayadd(self):
         self.assertEqual(day_add("Sunday", 100), "Tuesday")
+    """
+        Exercise 5: Can your day_add function already work with negative del-
+        tas? For example, -1 would be yesterday, or -7 would be a week ago:
+        If your function already works, explain why. If it does not work, ma-
+        ke it work.
+        Hint: Play with some cases of using the modulus function % (introduced
+        at the beginning of the previous chapter). Specifically, explore what 
+        happens to x % 7 when x is negative.
+    """
+    def test_1_negative_dayadd(self):
+        self.assertEqual(day_add("Sunday", -1), "Saturday")
+
+    def test_2_negative_dayadd(self):
+        self.assertEqual(day_add("Sunday", -7), "Sunday")
+
+    def test_2_negative_dayadd(self):
+        self.assertEqual(day_add("Tuesday", -100), "Sunday")
+
+    # The day_add function already works with negative values due to it being programmed
+    # using modulus
+
 
     def tearDown(self):
         pass
