@@ -123,8 +123,14 @@ def intercept(x1, y1, x2, y2):
     m = slope(x1, y1, x2, y2)
     return y1 - m * x1
 
+# Exercise 14
+def is_even(n):
+    if (n % 2) == 0:
+        return True
+    else:
+        return False
 
-
+    return "None"
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -373,8 +379,20 @@ class test(unittest.TestCase):
         self.assertEqual(intercept(4, 6, 12, 8), 5.0)
 
     """
-        Exercise 14: 
+        Exercise 14: Write a function called is_even(n) that takes an integer 
+        as an argument and returns True if the argument is an even number and
+        False if it is odd.
+        Add your own tests to the test suite.
     """
+    def test_1_iseven(self):
+        self.assertTrue(is_even(4))
+
+    def test_2_iseven(self):
+        self.assertTrue(is_even(12))
+
+    def test_3_iseven(self):
+        self.assertFalse(is_even(19))
+
     def tearDown(self):
         pass
 
