@@ -84,9 +84,9 @@ def days_in_month(month):
 
     return "None"
 
-# Exercise 7
+# Exercise 7 & 8
 def to_secs(h, m, s):
-    return (h * 3600) + (m * 60) + s
+    return int((h * 3600) + (m * 60) + s)
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -214,6 +214,17 @@ class test(unittest.TestCase):
 
     def test_5_tosecs(self):
         self.assertEqual(to_secs(0, -10, 10), -590)
+
+    """
+        Exercise 8: Extend to_secs so that it can cope with real values as 
+        inputs. It should always return an integer number of seconds (truncated 
+        towards zero):
+    """
+    def test_1_tosecs_real(self):
+        self.assertEqual(to_secs(2.5, 0, 10.71), 9010)
+
+    def test_2_tosecs_real(self):
+        self.assertEqual(to_secs(2.433, 0, 0), 8758)
 
     def tearDown(self):
         pass
