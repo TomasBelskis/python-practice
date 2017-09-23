@@ -37,15 +37,22 @@ def turn_clockwise(direction):
 
 def day_name(num):
     days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
     for i in range(len(days)):
         if i == num:
             return days[i]
 
     return "None"
 
-# TODO Finish of exercise 3 function
 def day_num(day):
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    for i in range(len(days)):
+        if days[i] == day:
+            return i
+
+    return "None"
+
+# TODO Finish of exercise 4 function
+def day_add(day, num):
     return "None"
 
 class test(unittest.TestCase):
@@ -106,6 +113,25 @@ class test(unittest.TestCase):
 
     def test_5_dayInverse(self):
         self.assertEqual(day_num("Halloween"), "None")
+
+    """
+        Exercise 4: Write a function that helps answer questions like “‘Today
+        is Wednesday. I leave on holiday in 19 days time. What day will that 
+        be?”’ So the function must take a day name and a delta argument — the
+        number of days to add — and should return the resulting day name:
+    """
+
+    def test_1_dayadd(self):
+        self.assertEqual(day_add("Monday", 4), "Friday")
+
+    def test_2_dayadd(self):
+        self.assertEqual(day_add("Tuesday", 0), "Tuesday")
+
+    def test_3_dayadd(self):
+        self.assertEqual(day_add("Tuesday", 14), "Tuesday")
+
+    def test_4_dayadd(self):
+        self.assertEqual(day_add("Sunday", 100), "Tuesday")
 
     def tearDown(self):
         pass
