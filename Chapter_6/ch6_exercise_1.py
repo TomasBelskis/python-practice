@@ -20,8 +20,8 @@ Condition: All of the exercises below should be added to a single file. In
 
 import unittest
 
+# Exercise 1
 def turn_clockwise(direction):
-
 
     if direction == "N":
         return  "E"
@@ -35,6 +35,7 @@ def turn_clockwise(direction):
         return "None"
     return "None"
 
+# Exercise 2
 def day_name(num):
     days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     for i in range(len(days)):
@@ -43,6 +44,7 @@ def day_name(num):
 
     return "None"
 
+# Exercise 3
 def day_num(day):
     days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     for i in range(len(days)):
@@ -51,7 +53,7 @@ def day_num(day):
 
     return "None"
 
-
+# Exercise 4 & 5
 def day_add(day, num):
     s = 0
     leave_day = 0
@@ -70,6 +72,7 @@ def day_add(day, num):
 
     return "None"
 
+# Exercise 6
 def days_in_month(month):
     monthsDays = {'January':31, 'February':28, 'March':31, 'April':30,
                   'May':31, 'June':30, 'July':31, 'August':31, 'September':30,
@@ -80,6 +83,10 @@ def days_in_month(month):
             return v
 
     return "None"
+
+# Exercise 7
+def to_secs(h, m, s):
+    return (h * 3600) + (m * 60) + s
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -190,8 +197,23 @@ class test(unittest.TestCase):
         self.assertEqual(days_in_month("December"), 31)
 
     """
-        Exercise 7: 
+        Exercise 7: Write a function to_secs that converts hours, minutes and
+        seconds to a total number of seconds. Here are some tests that should pass:
     """
+    def test_1_tosecs(self):
+        self.assertEqual(to_secs(2, 30, 10), 9010)
+
+    def test_2_tosecs(self):
+        self.assertEqual(to_secs(2, 0, 0), 7200)
+
+    def test_3_tosecs(self):
+        self.assertEqual(to_secs(0, 2, 0), 120)
+
+    def test_4_tosecs(self):
+        self.assertEqual(to_secs(0, 0, 42), 42)
+
+    def test_5_tosecs(self):
+        self.assertEqual(to_secs(0, -10, 10), -590)
 
     def tearDown(self):
         pass
