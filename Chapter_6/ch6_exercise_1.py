@@ -98,6 +98,16 @@ def minutes_in(s):
 def seconds_in(s):
     return int(s%60)
 
+# Exercise 11
+def compare(a,b):
+    if a > b:
+        return 1
+    elif a == b:
+        return 0
+    elif a < b:
+        return -1
+
+    return "None"
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -282,6 +292,22 @@ class test(unittest.TestCase):
 
     def test_7_ex9(self):
         self.assertEqual(len("hello, world!"), 13)
+
+    """
+        Exercise 11: Write a compare function that returns 1 if a > b, 0 if 
+        a == b, and -1 if a < b
+    """
+    def test_1_compare(self):
+        self.assertEqual(compare(5, 4), 1)
+
+    def test_2_compare(self):
+        self.assertEqual(compare(7, 7), 0)
+
+    def test_3_compare(self):
+        self.assertEqual(compare(2, 3), -1)
+
+    def test_4_compare(self):
+        self.assertEqual(compare(42, 1), 1)
 
 if __name__ == '__main__':
     unittest.main()
