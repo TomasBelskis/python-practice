@@ -118,6 +118,14 @@ def hypotenuse(a, b):
 def slope(x1, y1, x2, y2):
     return (y2 - y1)/(x2 - x1)
 
+# Exercise 13 (Part 2)
+def intercept(x1, y1, x2, y2):
+    m = slope(x1, y1, x2, y2)
+    return y1 - m * x1
+
+
+
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -349,7 +357,24 @@ class test(unittest.TestCase):
 
     def test_4_slope(self):
         self.assertEqual(slope(2, 4, 1, 2), 2.0)
+    """
+        Exercise 13 (Part 2): Then use a call to slope in a new function nam-
+        ed intercept (x1, y1, x2, y2) that returns the y-intercept of the li-
+        ne through the points (x1, y1) and (x2, y2)
 
+    """
+    def test_1_intercept(self):
+        self.assertEqual(intercept(1, 6, 3, 12), 3.0)
+
+    def test_2_intercept(self):
+        self.assertEqual(intercept(6, 1, 1, 6), 7.0)
+
+    def test_3_intercept(self):
+        self.assertEqual(intercept(4, 6, 12, 8), 5.0)
+
+    """
+        Exercise 14: 
+    """
     def tearDown(self):
         pass
 
