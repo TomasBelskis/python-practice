@@ -88,6 +88,17 @@ def days_in_month(month):
 def to_secs(h, m, s):
     return int((h * 3600) + (m * 60) + s)
 
+# Exercise 9
+def hours_in(s):
+    return int(s/3600)
+
+def minutes_in(s):
+    return int((s%3600)/60)
+
+def seconds_in(s):
+    return int(s%60)
+
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -225,6 +236,26 @@ class test(unittest.TestCase):
 
     def test_2_tosecs_real(self):
         self.assertEqual(to_secs(2.433, 0, 0), 8758)
+
+    """
+        Exercises 9: Write three functions that are the “inverses” of to_secs:  
+                        (a) hours_in returns the whole integer number of hours represented by a total num-
+                        ber of seconds.
+                        (b) minutes_in returns the whole integer number of left over minutes in a total number
+                        of seconds, once the hours have been taken out.
+                        (c) seconds_in returns the left over seconds represented by a total number of sec-
+                        onds.
+                        You may assume that the total number of seconds passed to these functions is an 
+                        integer. Here are some test cases:
+    """
+    def test_1_hoursin(self):
+        self.assertEqual(hours_in(9010), 2)
+
+    def test_1_minutesin(self):
+        self.assertEqual(minutes_in(9010), 30)
+
+    def test_1_secondsin(self):
+        self.assertEqual(seconds_in(9010), 10)
 
     def tearDown(self):
         pass
