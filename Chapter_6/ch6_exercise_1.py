@@ -259,6 +259,29 @@ class test(unittest.TestCase):
 
     def tearDown(self):
         pass
+    """
+        Exercise 10: Which of these tests fail? Explain why.
+    """
+    # def test_1_ex9(self):
+        # self.assertEqual(3 % 4, 0) # Mod returns 3, because 4 doesn't go into 3
+
+    def test_2_ex9(self):
+        self.assertEqual(3 % 4, 3)
+
+    #def test_3_ex9(self):
+       # self.assertEqual(3 / 4, 0) # Returns a real value of 0.75
+
+    def test_4_ex9(self):
+        self.assertEqual(3 // 4, 0)
+
+    # def test_5_ex9(self):
+       #  self.assertEqual(3 + 4 * 2, 14) # Multiplication is executed first
+
+   # def test_6_ex9(self):
+       # self.assertEqual(4 - 2 + 2, 0) # Arithmetic operations executed left to right
+
+    def test_7_ex9(self):
+        self.assertEqual(len("hello, world!"), 13)
 
 if __name__ == '__main__':
     unittest.main()
