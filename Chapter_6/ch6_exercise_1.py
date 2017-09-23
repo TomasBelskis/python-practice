@@ -132,6 +132,15 @@ def is_even(n):
 
     return "None"
 
+# Exercise 14
+def is_odd(n):
+    if (n % 2) != 0:
+        return True
+    else:
+        return False
+
+    return "None"
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -392,6 +401,23 @@ class test(unittest.TestCase):
 
     def test_3_iseven(self):
         self.assertFalse(is_even(19))
+    """
+        Exercise 15: Now write the function is_odd(n) that returns True when n 
+        is odd and False oth- erwise. Include unit tests for this function too.
+        Finally, modify it so that it uses a call to is_even to determine if its 
+        argument is an odd integer, and ensure that its test still pass.
+    """
+    def test_1_isodd(self):
+        self.assertTrue(is_odd(3))
+
+    def test_2_isodd(self):
+        self.assertTrue(is_odd(15))
+
+    def test_3_isodd(self):
+        self.assertFalse(is_odd(6))
+
+    def test_4_isodd(self):
+        self.assertFalse(is_even(17))
 
     def tearDown(self):
         pass
