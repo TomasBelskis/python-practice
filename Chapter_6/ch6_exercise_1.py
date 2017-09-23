@@ -51,7 +51,7 @@ def day_num(day):
 
     return "None"
 
-# TODO Finish of exercise 4 function
+
 def day_add(day, num):
     s = 0
     leave_day = 0
@@ -68,6 +68,10 @@ def day_add(day, num):
         leave_day = leave_day % 7
         return days[leave_day]
 
+    return "None"
+
+# TODO Finish the function for exercise 6 test casesg
+def days_in_month(month):
     return "None"
 
 class test(unittest.TestCase):
@@ -168,6 +172,15 @@ class test(unittest.TestCase):
     # The day_add function already works with negative values due to it being programmed
     # using modulus
 
+    """
+        Exercise 6: Write a function days_in_month which takes the name of a 
+        month, and returns the number of days in the month. Ignore leap years:
+    """
+    def test_1_daysinmonth(self):
+        self.assertEqual(days_in_month("February"), 28)
+
+    def test_2_daysinmonth(self):
+        self.assertEqual(days_in_month("December"), 31)
 
     def tearDown(self):
         pass
