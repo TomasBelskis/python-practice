@@ -114,6 +114,10 @@ def compare(a,b):
 def hypotenuse(a, b):
     return math.sqrt(a**2 + b**2)
 
+# Exercise 13
+def slope(x1, y1, x2, y2):
+    return (y2 - y1)/(x2 - x1)
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -329,6 +333,22 @@ class test(unittest.TestCase):
     def test_4_hypotenuse(self):
         self.assertEqual(hypotenuse(9, 12), 15.0)
 
+    """
+        Exercise 13: Write a function slope(x1, y1, x2, y2) that returns the
+        slope of the line through the points (x1, y1) and (x2, y2). Be sure 
+        your implementation of slope can pass the following tests:
+    """
+    def test_1_slope(self):
+        self.assertEqual(slope(5, 3, 4, 2), 1.0)
+
+    def test_2_slope(self):
+        self.assertEqual(slope(1, 2, 3, 2), 0.0)
+
+    def test_3_slope(selfs):
+        selfs.assertEqual(slope(1, 2, 3, 3), 0.5)
+
+    def test_4_slope(self):
+        self.assertEqual(slope(2, 4, 1, 2), 2.0)
 
     def tearDown(self):
         pass
