@@ -132,12 +132,27 @@ def is_even(n):
 
     return "None"
 
-# Exercise 14
+# Exercise 15
 def is_odd(n):
     if (n % 2) != 0:
         return True
     else:
         return False
+
+    return "None"
+
+# Exercise 16
+def is_factor(n1, n2):
+    if (n1 > n2):
+        if (n1 % n2) == 0:
+            return True
+        else:
+            return False
+    elif (n1 < n2):
+        if(n2 % n1) == 0:
+            return True
+        else:
+            return False
 
     return "None"
 
@@ -419,8 +434,31 @@ class test(unittest.TestCase):
     def test_4_isodd(self):
         self.assertFalse(is_even(17))
 
+    """
+        Exercise 16: Write a function is_factor(f, n) that passes these tests:
+    """
+    def test_1_isfactor(self):
+        self.assertTrue(is_factor(3, 12))
+
+    def test_2_isfactor(self):
+        self.assertFalse(is_factor(5, 12))
+
+    def test_3_isfactor(self):
+        self.assertTrue(is_factor(7, 14))
+
+    def test_4_isfactor(self):
+        self.assertFalse(is_factor(7, 15))
+
+    def test_5_isfactor(self):
+        self.assertTrue(is_factor(1, 15))
+
+    def test_6_isfactor(self):
+        self.assertTrue(is_factor(15, 15))
+
     def tearDown(self):
         pass
+
+
 
 if __name__ == '__main__':
     unittest.main()
