@@ -70,8 +70,15 @@ def day_add(day, num):
 
     return "None"
 
-# TODO Finish the function for exercise 6 test casesg
 def days_in_month(month):
+    monthsDays = {'January':31, 'February':28, 'March':31, 'April':30,
+                  'May':31, 'June':30, 'July':31, 'August':31, 'September':30,
+                  'October':31, 'November':30, 'December':31}
+
+    for k, v in monthsDays.items():
+        if k == month:
+            return v
+
     return "None"
 
 class test(unittest.TestCase):
@@ -181,6 +188,10 @@ class test(unittest.TestCase):
 
     def test_2_daysinmonth(self):
         self.assertEqual(days_in_month("December"), 31)
+
+    """
+        Exercise 7: 
+    """
 
     def tearDown(self):
         pass
