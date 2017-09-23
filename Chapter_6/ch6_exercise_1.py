@@ -19,6 +19,7 @@ Condition: All of the exercises below should be added to a single file. In
 # TODO write comments for each function
 
 import unittest
+import math
 
 # Exercise 1
 def turn_clockwise(direction):
@@ -108,6 +109,10 @@ def compare(a,b):
         return -1
 
     return "None"
+
+# Exercise 12
+def hypotenuse(a, b):
+    return math.sqrt(a**2 + b**2)
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -267,8 +272,6 @@ class test(unittest.TestCase):
     def test_1_secondsin(self):
         self.assertEqual(seconds_in(9010), 10)
 
-    def tearDown(self):
-        pass
     """
         Exercise 10: Which of these tests fail? Explain why.
     """
@@ -308,6 +311,27 @@ class test(unittest.TestCase):
 
     def test_4_compare(self):
         self.assertEqual(compare(42, 1), 1)
+
+    """
+        Exercise 12: Write a function called hypotenuse that returns the length 
+        of the hypotenuse of a right triangle given the lengths of the two legs 
+        as parameters:
+    """
+    def test_1_hypotenuse(self):
+        self.assertEqual(hypotenuse(3, 4), 5.0)
+
+    def test_2_hypotenuse(self):
+        self.assertEqual(hypotenuse(12, 5), 13.0)
+
+    def test_3_hypotenuse(self):
+        self.assertEqual(hypotenuse(24, 7), 25.0)
+
+    def test_4_hypotenuse(self):
+        self.assertEqual(hypotenuse(9, 12), 15.0)
+
+
+    def tearDown(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
