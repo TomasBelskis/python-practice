@@ -156,8 +156,13 @@ def is_factor(n1, n2):
 
     return "None"
 
+# Exercise 17
 def is_multiple(n1, n2):
     return n1 % n2 == 0
+
+# Exercise 18
+def f2c(f):
+    return round((f - 32) * .5556)
 
 class test(unittest.TestCase):
     def setUp(self):
@@ -475,6 +480,34 @@ class test(unittest.TestCase):
 
     def test_5_ismultiple(self):
         self.assertFalse(is_multiple(12, 7))
+
+    """
+        Exercises 18: Write the function f2c(t) designed to return the integer
+        value of the nearest degree Celsius for given temperature in Fahrenheit.
+        (hint: you may want to make use of the built-in function, round. Try printing 
+        round.__doc__ in a Python shell or looking up help for the round function,
+        and experimenting with it until you are comfortable with how it works.)
+    """
+    def test_1_f2c(self):
+        self.assertEqual(f2c(212), 100) # Boiling point of water
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(32), 0) # Freezing point of water
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(-40), -40) # Wow, what an interesting case!
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(36), 2)
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(37), 3)
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(38), 3)
+
+    def test_1_f2c(self):
+        self.assertEqual(f2c(39), 4)
 
     def tearDown(self):
         pass
