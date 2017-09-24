@@ -156,6 +156,9 @@ def is_factor(n1, n2):
 
     return "None"
 
+def is_multiple(n1, n2):
+    return n1 % n2 == 0
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -454,6 +457,24 @@ class test(unittest.TestCase):
 
     def test_6_isfactor(self):
         self.assertTrue(is_factor(15, 15))
+
+    """
+        Exercise 17: Write is_multiple to satisfy these unit tests
+    """
+    def test_1_ismultiple(self):
+        self.assertTrue(is_multiple(12, 3))
+
+    def test_2_ismultiple(self):
+        self.assertTrue(is_multiple(12, 4))
+
+    def test_3_ismultiple(self):
+        self.assertFalse(is_multiple(12, 5))
+
+    def test_4_ismultiple(self):
+        self.assertTrue(is_multiple(12, 6))
+
+    def test_5_ismultiple(self):
+        self.assertFalse(is_multiple(12, 7))
 
     def tearDown(self):
         pass
