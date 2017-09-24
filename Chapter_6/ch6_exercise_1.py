@@ -164,6 +164,10 @@ def is_multiple(n1, n2):
 def f2c(f):
     return round((f - 32) * .5556)
 
+# Exercise 19
+def c2f(c):
+    return round((c * 1.8) + 32)
+
 class test(unittest.TestCase):
     def setUp(self):
         pass
@@ -491,23 +495,45 @@ class test(unittest.TestCase):
     def test_1_f2c(self):
         self.assertEqual(f2c(212), 100) # Boiling point of water
 
-    def test_1_f2c(self):
+    def test_2_f2c(self):
         self.assertEqual(f2c(32), 0) # Freezing point of water
 
-    def test_1_f2c(self):
+    def test_3_f2c(self):
         self.assertEqual(f2c(-40), -40) # Wow, what an interesting case!
 
-    def test_1_f2c(self):
+    def test_4_f2c(self):
         self.assertEqual(f2c(36), 2)
 
-    def test_1_f2c(self):
+    def test_5_f2c(self):
         self.assertEqual(f2c(37), 3)
 
-    def test_1_f2c(self):
+    def test_6_f2c(self):
         self.assertEqual(f2c(38), 3)
 
-    def test_1_f2c(self):
+    def test_7_f2c(self):
         self.assertEqual(f2c(39), 4)
+
+    """
+        Exercise 19: Now do the opposite: write the function c2f which 
+        converts Celsius to Fahrenheit:
+    """
+    def test_1_c2f(self):
+        self.assertEqual(c2f(0), 32)
+
+    def test_2_c2f(self):
+        self.assertEqual(c2f(100), 212)
+
+    def test_3_c2f(self):
+        self.assertEqual(c2f(-40), -40)
+
+    def test_4_c2f(self):
+        self.assertEqual(c2f(12), 54)
+
+    def test_5_c2f(self):
+        self.assertEqual(c2f(18), 64)
+
+    def test_6_c2f(self):
+        self.assertEqual(c2f(-48), -54)
 
     def tearDown(self):
         pass
