@@ -113,6 +113,43 @@ def num_zero_and_five_digits(n):
 """
 
 # 7.10 - Tables
+def raised_to_power_of_two(n):
+    for x in range(n): # Generate numbers
+        print(x, "\t", 2**x)
+# 7.11 - Two dimensional tables
+def two_dimensional_table():
+    for i in range(1, 7):
+        print(2 * i, end="  ")
+    print()
+# 7.12 - Encapsulation and generalisation
+    """ 
+        Encapsulation is the process of wrapping a piece of code in a function.
+        Generalisation means taking something specific such as printing the
+        multiples of 2 and making it more generic, such as printing multiples
+        of any integer.
+    """
+def print_multiples(n):
+    for i in range(1, 7):
+        print(n * i, end="   ")
+    print()
+
+# 7.13 - More encapsulation
+    """
+        Demonstration of more encapsulation, wrapping the code in previous 
+        section in a new function.
+    """
+def print_mult_table():
+    for i in range(1, 7):
+        print_mult_table(i)
+
+
+
+
+
+
+
+
+
 
 # Test cases:
 class TestingExamples(unittest.TestCase):
