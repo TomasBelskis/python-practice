@@ -76,6 +76,43 @@ def seq3np1(n):
 
 
 # 7.6 - Tracing program:
+"""
+    Ability to go through programs iteration and follow what is being executed,
+    and the order of execution.
+"""
+
+# 7.7 - Counting digits:
+def num_digits(n):
+    """ Counts the number of decimal digits in a positive integer. """
+    count = 0
+    while n != 0:
+        count = count + 1
+        n = n // 10
+    return count
+
+def num_zero_and_five_digits(n):
+    """ Count digits that are either 0 or 5"""
+    count = 0
+    while n > 0:
+        digit = n % 10
+        if digit == 0 or digit == 5:
+            count = count + 1
+        n = n // 10
+    return count
+
+# 7.8 - Abbreviated assignment
+"""
+    count += 1 is the same as count = count + 1
+"""
+
+# 7.9 - Help and meta-notation
+"""
+    Meta notation:
+    Bold means token, keyword or symbol
+    Italic means something of this type
+"""
+
+# 7.10 - Tables
 
 # Test cases:
 class TestingExamples(unittest.TestCase):
@@ -102,6 +139,9 @@ class TestingExamples(unittest.TestCase):
 
     def test_sum_to_2(self):
         self.assertEquals(sum_to(1000), 500500)
+
+    def test_num_zero_and_five_digits_1(self):
+        self.assertEquals(num_zero_and_five_digits(1055030250), 7)
 
     def tearDown(self):
         pass
