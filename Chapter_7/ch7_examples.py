@@ -142,12 +142,54 @@ def print_mult_table():
     for i in range(1, 7):
         print_mult_table(i)
 
+    """
+        Notes:
+        This process is common development plan. Develop code by writing l
+        ines of code outside any function, or typing them in to the interpreter.
+        When we get the code working, we extract it and wrap it in a function.
+    """
+# 7.14 - Local variables
+    """
+        Variables are local to the functions they are used in, therefore same 
+        variable names can be used as long as they are in separate functions.
+    """
+# 7.15 - The break statement
+    """
+        Break keyword is used to break out of a loop immediately and continue 
+        the program outside of that statement.
+    """
+def example_break():
+    for i in [12, 16, 17, 24, 29]:
+        if i % 2 == 1: # If the number is odd
+            break      # ... immediately exit the loop
+        print(i)
+    print("done")
 
+# 7.16 - Other flavours of loops
+    """
+        Middle test loop with the exit test in the middle of the body, rather
+        that at the beginning or at the end. Python uses a combination of 
+        while and if condition: break to get the job done.
+    """
+def example_do_while():
+    total = 0
+    while True:
+        response = input(" Enter the next number. (Leave blank to end)")
+        if response == "":
+            break
+        total += int(response)
+    print("The total of the numbers you entered is ", total)
 
+def play_the_game_once():
+    print("Playing Game")
 
-
-
-
+def play_one_game():
+    while True:
+        play_the_game_once()
+        response = input("Play again (yes or no)")
+        if response != "yes":
+            break
+    print("Goodbye")
 
 
 
