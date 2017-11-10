@@ -182,6 +182,81 @@ def example_do_while():
 
 def play_the_game_once():
     print("Playing Game")
+# 7.17 -  The guessing game is in it's own class ch7_guessing_game_example.py
+
+# 7.18 - The continue statement
+    """
+        This is a control flow statement that causes the program to 
+        immediately skip the processing of the rest of the body of 
+        the loop, for the current iteration.
+    """
+def example_continue():
+    for i in [12, 16, 17, 24, 29, 30]:
+        if i % 2 == 1: # If the number is odd
+            continue   # Don't process it
+        print(i)
+    print("done")
+
+# 7.19 - More generalisation
+    """
+        Multiplication table of any size:
+    """
+def print_mult_table(high):
+    for i in range(1, high + 1):
+        print_multiples(i)
+
+# Revising both of the functions so that they print a square table
+
+def print_multiples_r(n, high):
+    for i in range(1, high + 1):
+        print(n * i, end="   ")
+    print()
+
+def print_mult_table_r(high):
+    for i in range(1, high + 1):
+        print_multiples_r(i, high)
+
+# 7.20 - Functions
+    """
+        Functions are great, use functions.
+    """
+
+# 7.21 - Paired Data
+    """
+        List pairs (dictionary data storage)    
+    """
+year_born = ("Paris Hilton", 1998)
+celebs = [("Brad Pitt", 1963), ("Jack Nicholson", 1937), ("Justin Bieber", 1994)]
+print(celebs)
+print(len(celebs))
+
+for (nm, yr) in celebs:
+    if yr < 1980:
+        print(nm)
+
+# 7.22 - Nested loops for nested data
+    """
+        Iterating through lists of structured data
+    """
+students = [
+            ("John", ["CompSci", "Physics"]),
+            ("Vusi", ["Maths", "CompSci", "Stats"]),
+            ("Jess", ["CompSci", "Accounting", "Economics", "Management"]),
+            ("Sarah", ["InfSys", "Accounting", "Economics", "CommLaw"])]
+def print_all_students_count_courses():
+    # Print all students with a count of their courses
+    for (name, subjects) in students:
+        print(name, "takes", len(subjects), "courses")
+
+def how_many_students_take_compSci():
+    # Count how many students are taking compSci
+    counter = 0
+    for (name, subjects) in students:
+        for s in subjects: # Nested loop
+            if s == "CompSci":
+                counter += 1
+
+    print("The number of students taking CompSci is", counter)
 
 def play_one_game():
     while True:
