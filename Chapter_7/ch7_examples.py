@@ -258,6 +258,27 @@ def how_many_students_take_compSci():
 
     print("The number of students taking CompSci is", counter)
 
+# 7.23 - Newton's method for finding square roots
+    """ 
+        Finding absolute value, example of middle-exit loop:
+    """
+def sqrt(n):
+    approx = n/2.0  # Start with some or other guess at the answer
+    while True:
+        better = (approx + n/approx)/2.0
+        if abs(approx - better) < 0.001:
+            return better
+        approx = better
+
+
+# 7.24 - Algorithm
+   """    
+    Newton’s method is an example of an algorithm: it is a mechanical 
+    process for solving a category of problems (in this case, computing 
+    square roots).
+
+   """
+
 def play_one_game():
     while True:
         play_the_game_once()
