@@ -45,3 +45,6 @@ class TestingExamples(unittest.TestCase):
 list_of_numbers = [3, 4, 5, 9, 12, 34, 55]
 
 print(sum_up_to_even(list_of_numbers))
+
+if __name__ == '__main__':
+    unittest.main()
