@@ -30,17 +30,18 @@ class TestingExamples(unittest.TestCase):
         pass
 
     def test_all_evens(self):
-        self.assertEqual(sum_up_to_even([2,4,6,8]),0)
+        self.assertEqual(sum_up_to_even([2, 4, 6, 8]), 0)
 
     def test_all_odd(self):
-        self.assertEqual(sum_up_to_even([3,9,13,17]),42)
+        self.assertEqual(sum_up_to_even([3, 9, 13, 17]), 42)
 
     def test_even_and_odd(self):
-        self.assertEqual(sum_up_to_even([3,9,4,3]),12)
+        self.assertEqual(sum_up_to_even([3, 9, 4, 3]), 12)
 
     def tearDown(self):
         pass
 
-list_of_numbers = [3,4,5,9,12,34,55]
+
+list_of_numbers = [3, 4, 5, 9, 12, 34, 55]
 
 print(sum_up_to_even(list_of_numbers))
