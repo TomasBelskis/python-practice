@@ -56,18 +56,30 @@ def play_once(human_plays_first):
     return result
 
 
+# Function for continuous gameplay
 def play_the_game():
     continue_game = True
+    player_win = 0
+    draw = 0
+    computer_win = 0
     while continue_game:
         result = play_once(True)
-        if result == -1: print("I win!")
-        elif result == 0: print("Game drawn!")
-        else: print("You win!")
+        if result == -1:
+            print("I win!")
+            player_win += 1
+        elif result == 0:
+            print("Game drawn!")
+            draw += 1
+        else:
+            print("You win!")
+            computer_win += 1
 
-        print("Do want to continue, yes or no?")
+        print("Current score Player win: ", player_win," Draw: ", draw, " Computer win: ",
+              computer_win, "\nDo want to continue, yes or no?")
         inpt = input()
         if inpt == "no":
-            print("Goodbye!")
+            print("Final scores Player win: ", player_win," Draw: ", draw, " Computer win: ",
+              computer_win,"\nGoodbye!")
             continue_game = False
             break
 
