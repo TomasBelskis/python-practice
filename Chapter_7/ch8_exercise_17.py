@@ -80,6 +80,7 @@ def play_the_game():
     starting_player = who_starts()
     while continue_game:
         result = play_once(starting_player)
+
         if result == -1:
             print("I win!")
             player_win += 1
@@ -90,8 +91,11 @@ def play_the_game():
             print("You win!")
             computer_win += 1
 
+        # Calculate percentage of games won by player
+        player_win_percent = (player_win / (player_win + draw + computer_win)) * 100
+
         print("Current score Player win: ", player_win," Draw: ", draw, " Computer win: ",
-              computer_win, "\nDo want to continue, yes or no?")
+              computer_win, "Player win percentage: ", player_win_percent, "\nDo want to continue, yes or no?")
         inpt = input()
 
         # Setting the players to rotate turns:
@@ -100,7 +104,7 @@ def play_the_game():
 
         if inpt == "no":
             print("Final scores Player win: ", player_win," Draw: ", draw, " Computer win: ",
-              computer_win,"\nGoodbye!")
+              computer_win, "Player win percentage: ", player_win_percent, "\nGoodbye!")
             continue_game = False
             break
 
