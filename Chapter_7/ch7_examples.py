@@ -36,6 +36,7 @@ for f in ["Zoe", "Joe", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
     invitation = "Hi " + f + ".  Please come to my party this Saturday!"
     print(invitation)
 
+
 # Iterating through a list generating a sum total
 def mysum(xs):
     """ Sum all the numbers in the list xs, and return total. """
@@ -43,6 +44,7 @@ def mysum(xs):
     for x in xs:
         running_total = running_total + x
     return running_total
+
 
 # The while statement
 def sum_to(n):
@@ -53,6 +55,7 @@ def sum_to(n):
         ss = ss + v
         v = v + 1
     return ss
+
 
 # The Collatz 3n + 1 sequence
 def seq3np1(n):
@@ -81,6 +84,7 @@ def seq3np1(n):
     and the order of execution.
 """
 
+
 # 7.7 - Counting digits:
 def num_digits(n):
     """ Counts the number of decimal digits in a positive integer. """
@@ -89,6 +93,7 @@ def num_digits(n):
         count = count + 1
         n = n // 10
     return count
+
 
 def num_zero_and_five_digits(n):
     """ Count digits that are either 0 or 5"""
@@ -112,10 +117,13 @@ def num_zero_and_five_digits(n):
     Italic means something of this type
 """
 
+
 # 7.10 - Tables
 def raised_to_power_of_two(n):
     for x in range(n): # Generate numbers
         print(x, "\t", 2**x)
+
+
 # 7.11 - Two dimensional tables
 def two_dimensional_table():
     for i in range(1, 7):
@@ -128,6 +136,8 @@ def two_dimensional_table():
         multiples of 2 and making it more generic, such as printing multiples
         of any integer.
     """
+
+
 def print_multiples(n):
     for i in range(1, 7):
         print(n * i, end="   ")
@@ -138,6 +148,8 @@ def print_multiples(n):
         Demonstration of more encapsulation, wrapping the code in previous 
         section in a new function.
     """
+
+
 def print_mult_table():
     for i in range(1, 7):
         print_mult_table(i)
@@ -158,6 +170,8 @@ def print_mult_table():
         Break keyword is used to break out of a loop immediately and continue 
         the program outside of that statement.
     """
+
+
 def example_break():
     for i in [12, 16, 17, 24, 29]:
         if i % 2 == 1: # If the number is odd
@@ -171,6 +185,8 @@ def example_break():
         that at the beginning or at the end. Python uses a combination of 
         while and if condition: break to get the job done.
     """
+
+
 def example_do_while():
     total = 0
     while True:
@@ -179,6 +195,7 @@ def example_do_while():
             break
         total += int(response)
     print("The total of the numbers you entered is ", total)
+
 
 def play_the_game_once():
     print("Playing Game")
@@ -190,6 +207,8 @@ def play_the_game_once():
         immediately skip the processing of the rest of the body of 
         the loop, for the current iteration.
     """
+
+
 def example_continue():
     for i in [12, 16, 17, 24, 29, 30]:
         if i % 2 == 1: # If the number is odd
@@ -201,16 +220,20 @@ def example_continue():
     """
         Multiplication table of any size:
     """
+
+
 def print_mult_table(high):
     for i in range(1, high + 1):
         print_multiples(i)
 
 # Revising both of the functions so that they print a square table
 
+
 def print_multiples_r(n, high):
     for i in range(1, high + 1):
         print(n * i, end="   ")
     print()
+
 
 def print_mult_table_r(high):
     for i in range(1, high + 1):
@@ -225,6 +248,8 @@ def print_mult_table_r(high):
     """
         List pairs (dictionary data storage)    
     """
+
+
 year_born = ("Paris Hilton", 1998)
 celebs = [("Brad Pitt", 1963), ("Jack Nicholson", 1937), ("Justin Bieber", 1994)]
 print(celebs)
@@ -243,41 +268,45 @@ students = [
             ("Vusi", ["Maths", "CompSci", "Stats"]),
             ("Jess", ["CompSci", "Accounting", "Economics", "Management"]),
             ("Sarah", ["InfSys", "Accounting", "Economics", "CommLaw"])]
+
+
 def print_all_students_count_courses():
     # Print all students with a count of their courses
     for (name, subjects) in students:
         print(name, "takes", len(subjects), "courses")
 
-def how_many_students_take_compSci():
+
+def how_many_students_take_compsci():
     # Count how many students are taking compSci
     counter = 0
     for (name, subjects) in students:
         for s in subjects: # Nested loop
             if s == "CompSci":
                 counter += 1
-
     print("The number of students taking CompSci is", counter)
 
 # 7.23 - Newton's method for finding square roots
     """ 
         Finding absolute value, example of middle-exit loop:
     """
-def sqrt(n):
+
+
+def square_root(n):
     approx = n/2.0  # Start with some or other guess at the answer
     while True:
-        better = (approx + n/approx)/2.0
+        better = (approx + n / approx) / 2.0
         if abs(approx - better) < 0.001:
             return better
         approx = better
 
 
 # 7.24 - Algorithm
-   """    
-    Newton’s method is an example of an algorithm: it is a mechanical 
-    process for solving a category of problems (in this case, computing 
-    square roots).
+    """    
+        Newton’s method is an example of an algorithm: it is a mechanical 
+        process for solving a category of problems (in this case, computing 
+        square roots).
+    """
 
-   """
 
 def play_one_game():
     while True:
