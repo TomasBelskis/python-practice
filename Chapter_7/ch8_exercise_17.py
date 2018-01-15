@@ -35,6 +35,7 @@ Description: 17. You and your friend are in a team to write
 @Exercise: Chapter 7 exercise 17
 @Description: Exercises 17
 """
+import random
 
 
 # Your friend will complete this function
@@ -47,7 +48,7 @@ def play_once(human_plays_first):
         -1 (human wins), 0 (game drawn), 1 (computer wins).
     """
     # This is all dummy scaffolding code right at the moment
-    import random
+
     rng = random.Random()
     # Pick a random result between -1 and 1.
     result = rng.randrange(-1, 2)
@@ -56,14 +57,29 @@ def play_once(human_plays_first):
     return result
 
 
+# Function to determine who goes first
+def who_starts():
+    print("Select a number from 1 to 10")
+    inpt = int(input())
+
+    rng = random.Random()
+    result = rng.randrange(1,10)
+
+    if inpt == result or ((inpt - 2) <= result and (inpt + 2) >= result):
+        return True
+    else:
+        return False
+
+
 # Function for continuous gameplay
 def play_the_game():
     continue_game = True
     player_win = 0
     draw = 0
     computer_win = 0
+    starting_player = who_starts()
     while continue_game:
-        result = play_once(True)
+        result = play_once(starting_player)
         if result == -1:
             print("I win!")
             player_win += 1
@@ -77,6 +93,11 @@ def play_the_game():
         print("Current score Player win: ", player_win," Draw: ", draw, " Computer win: ",
               computer_win, "\nDo want to continue, yes or no?")
         inpt = input()
+
+        # Setting the players to rotate turns:
+        if starting_player: starting_player = False
+        else: starting_player = True
+
         if inpt == "no":
             print("Final scores Player win: ", player_win," Draw: ", draw, " Computer win: ",
               computer_win,"\nGoodbye!")
