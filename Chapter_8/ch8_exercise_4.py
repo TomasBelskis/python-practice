@@ -10,12 +10,11 @@
 """
 
 
-def find(strng, ch, n):
+def find(strng, ch, ix=0):
     """
       Find and return the index of ch in strng.
       Return -1 if ch does not occur in strng.
     """
-    ix = 0
     while ix < len(strng):
         if strng[ix] == ch:
             return ix
@@ -23,12 +22,14 @@ def find(strng, ch, n):
     return -1
 
 
-def count_letters(s, c, n=False):
+def count_letters(s, c):
     count = 0
-    for letter in s:
-        indx = find(s, c, n)
-        if indx != -1:
-            count +=1
+    index = 0
+    while index != -1:
+        index = find(s, c, index)
+        if index == -1: break
+        index += 1 # if index is not = -1 increment the index to search from next letter.
+        count += 1 # increment the count of letters found in a string
 
     return count
 
