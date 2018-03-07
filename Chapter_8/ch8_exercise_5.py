@@ -7,7 +7,45 @@
                           string that contains your favourite paragraph of text
                           — perhaps a poem, a speech, instructions to bake a cake,
                           some inspirational verses, etc.
+                          Write a function which removes all punctuation from the string,
+                          breaks the string into a list of words, and counts the number
+                          of words in your text that contain the letter “e”.
+                          Your program should print an analysis of the text like this:
+                          Your text contains 243 words, of which 109 (44.8%) contain an "e".
+
 """
+import string
+
+def remove_punctuation(s):
+    s_without_punct = ""
+    for letter in s:
+        if letter not in string.punctuation:
+            s_without_punct += letter
+    return s_without_punct
+
+def find(strng, ch, start=0, end=None):
+    ix = start
+    if end is None:
+        end = len(strng)
+    while ix < end:
+        if strng[ix] == ch:
+            return ix
+        ix += 1
+    return -1
+
+def calculate_percentage(val1, val2):
+    return round((val1 / val2) * 100, 2)
+
+def print_stats(string):
+    wds = remove_punctuation(string).split()
+    word_count = len(wds)
+    e_count = 0
+    for w in wds:
+        if find(w, "e") != -1:
+            e_count += 1
+
+    return "Your text contains {0} words, of which {1} ({2}%) contain an \"e\".".format(word_count, e_count, calculate_percentage(e_count, word_count))
+
 
 paragraph = """ Two roads diverged in a yellow wood,
                 And sorry I could not travel both
@@ -33,4 +71,4 @@ paragraph = """ Two roads diverged in a yellow wood,
                 I took the one less traveled by,
                 And that has made all the difference."""
 
-print(paragraph)
+print(print_stats(paragraph))
